@@ -1,0 +1,33 @@
+---
+title: "class-09-26-2019 notes"
+author: "Grace Rotondo"
+date: "9/26/2019"
+output: html_document
+---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE)
+library(gapminder)
+library(ggplot2)
+library(tidyverse)
+```
+
+```{r}
+x <- gapminder %>% 
+  filter(country == "Belgium" & year == 1962)
+
+```
+
+```{r}
+gapminder %>%   
+  filter(year == 1962) %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = pop)) + geom_point() + scale
+
+```
+
+```{r}
+x %>% 
+  filter(year == 1962) %>% 
+  ggplot(aes(x = gdpPercap, y = lifeExp, size = population)) + geom_point()
+```
+
